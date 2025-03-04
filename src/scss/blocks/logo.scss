@@ -1,0 +1,18 @@
+$logo-mobile-width: 144;
+$logo-mobile-height: 24;
+
+.logo {
+  position: relative;
+  display: block;
+  @include adaptive-value('width', 192, $logo-mobile-width);
+  @include adaptive-value('height', 32, $logo-mobile-height);
+  background-image: url("/public/logo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  &--small {
+    width: $logo-mobile-width + px;
+    height: $logo-mobile-height + px;
+  }
+}

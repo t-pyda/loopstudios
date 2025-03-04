@@ -1,0 +1,26 @@
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  background-color: $c_black;
+  transform: translateX(-100%);
+  transition-duration: $amin-time;
+
+  @include onTablet {
+    display: block;
+  }
+
+  &--active {
+    transform: translateX(0);
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}

@@ -1,0 +1,17 @@
+$section-gap-desktop: 160;
+$section-gap-mobile: 96;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  @extend %main-text;
+  color: $c_black;
+
+  &__content {
+    display: grid;
+    @include adaptive-value('row-gap', $section-gap-desktop, $section-gap-mobile);
+    flex-grow: 1;
+    @include adaptive-value('margin-bottom', $section-gap-desktop, $section-gap-mobile);
+  }
+}

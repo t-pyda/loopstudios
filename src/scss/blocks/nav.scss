@@ -1,0 +1,60 @@
+.nav {
+  width: max-content;
+
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 32px;
+
+    @include onMobile {
+      grid-auto-flow: row;
+      row-gap: 16px;
+    }
+
+    &--sidebar {
+      grid-auto-flow: row;
+      row-gap: 24px;
+    }
+  }
+
+  &__item {
+    @include onMobile {
+      justify-self: center;
+    }
+  }
+
+  &__link {
+    position: relative;
+    color: $c_white;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: $c_white;
+      transform: translateX(-50%) scale(0);
+      transition-duration: transform;
+      transition-duration: $amin-time;
+    }
+
+    &:hover {
+      &::after {
+        transform: translateX(-50%) scale(1);
+      }
+    }
+
+    &--sidebar {
+      @extend %nav-link-text;
+
+      &:hover {
+        &::after {
+          transform: scale(0);
+        }
+      }
+    }
+  }
+}
